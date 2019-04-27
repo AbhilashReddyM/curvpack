@@ -18,7 +18,7 @@ vertices=isph.p
 faces=isph.tri
 
 spvert=cart2sph(vertices)
-# Calculate the spherical harmonic Y(l,m) and normalize to [0,1]
+# Calculate the spherical harmonic Y(m,l) and normalize to [0,1]
 dr1 = sph_harm(2, 5, spvert[:,2], spvert[:,1]).real
 
 vertices+=0.2*dr1[:,None]*vertices
