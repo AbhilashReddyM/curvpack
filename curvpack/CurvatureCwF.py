@@ -13,7 +13,17 @@ import numpy as np
 from .utils import  triangle_neighbors,GetVertexNormals,get_surf_neighbors,fastcross,normr
 
 def CurvatureCwF(vertices,faces,opt=1,want_LB=False):
-
+  '''
+  input:
+    vertices  : list/array of vertices
+    faces     : list/array of faces
+    opt       : integer
+                 =1: use one ring when valence >= 6. two ring otherwise
+                 =2: always use two ring
+    want_LB   : boolean
+                  =True : Calculate Laplace Beltrami of curvature
+                  =False: Dont Calculate Laplace Beltrami of curvature
+  '''
   npt=vertices.shape[0]
   neighbor_tri=triangle_neighbors(faces,npt)
 
